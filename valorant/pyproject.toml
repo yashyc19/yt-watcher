@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "lotus"
+version = "0.1.0"
+description = ""
+authors = ["yashyc19 <yashyc19@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^1.26.4"
+pandas = "^2.2.2"
+
+
+click = "^8.1.7"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+test-main = "lotus.main:main"
+demo = "lotus.demo:main"
