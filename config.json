@@ -1,5 +1,6 @@
 {
-    "website": "https://www.youtube.com/watch?v=XPyQt8HyzZM", 
+    "_comment": "The time mentioned in the config file is in seconds",
+    "website": "https://www.youtube.com/watch?v=RMrVbjhOmeU", 
     "tab_amount": 1,
     "watch_time": 35,
     "view_cycles": 5,

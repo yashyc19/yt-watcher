@@ -20,6 +20,7 @@ def init_tabs(website, tab_amount):
 
     for _ in range(tab_amount):
         website.new_tab()
+        sleep(1)  # Add a little wait time
 
 def open_links(website, tab_amount):
     """Open the YouTube link in each tab"""
@@ -28,6 +29,7 @@ def open_links(website, tab_amount):
         # Open links
         website.switch_tab(tab)
         website.get_vid()
+        sleep(1)  # Add a little wait time
 
 def play_video(website, tab_amount):
     """Click on the play button"""
@@ -36,6 +38,7 @@ def play_video(website, tab_amount):
         # Play the video on each tab
         website.switch_tab(tab)
         website.play_video()
+        sleep(1)  # Add a little wait time
 
 def refresh_all(website, tab_amount):
     """Refresh all tabs"""
@@ -44,6 +47,7 @@ def refresh_all(website, tab_amount):
         # Refresh all tabs
         website.switch_tab(tab)
         website.refresh()
+        sleep(1)  # Add a little wait time
 
 def main():
     """Main Function"""
@@ -61,6 +65,7 @@ def main():
     
     print('Cycle start')
     print('Playing videos')
+
     play_video(website, config['tab_amount'])
 
     for i in range(config['view_cycles']):

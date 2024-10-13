@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 
 from chromedriver_autoinstaller import install as install_chrome
 
@@ -19,8 +20,23 @@ def get_driver(browser):
 
     # Download browser binaries according to settings.json
     if browser.lower() in chrome:
+        # headless mode
+        options = Options()
+        # options.add_argument('--headless')  # headless mode
+        options.add_argument('--no-sandbox')
+        options.add_argument('--start-maximized')
+        options.add_argument('--disable-dev-shm-usage')
+        # options.add_argument('--disable-gpu')   # disable GPU
+        options.add_argument('--disable-blink-features=AutomationControlled')
+        options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        options.add_experimental_option('useAutomationExtension', False)
+        options.add_argument('--disable-extensions')
+        options.add_argument('--disable-infobars')
+        options.add_argument('--disable-popup-blocking')
+
         driverpath = install_chrome()
-        return webdriver.Chrome(service=Service(driverpath))
+        return webdriver.Chrome(service=Service(driverpath), options=options)
+        # return webdriver.Chrome(service=Service(driverpath))
 
     else:
         raise RuntimeError('Browser not found {}'.format(browser.lower()))
