@@ -1,8 +1,7 @@
 {
     "_comment": "The time mentioned in the config file is in seconds",
-    "website": "https://www.youtube.com/watch?v=RMrVbjhOmeU", 
-    "tab_amount": 1,
-    "watch_time": 35,
-    "view_cycles": 5,
-    "browser": "chrome"
+    "url": "https://www.youtube.com/watch?v=RMrVbjhOmeU", 
+    "tab_count": 2,
+    "watch_time": 5,
+    "view_cycles": 3
 }
