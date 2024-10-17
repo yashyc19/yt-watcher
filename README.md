@@ -1,61 +1,62 @@
-# YouTube View Bot
+# YouTube Watcher
 
-This is a tool to boost viewer count on a YouTube video. This is not intended for malicious purposes or monetization strategies. This was intended for personal use and testing purposes.
+This project is designed to automate the process of opening multiple tabs in a web browser and watching YouTube videos. It uses Selenium WebDriver to manage browser interactions.
 
-# Installation
-
-### Python Version
-Download the latest [Python](https://www.python.org/downloads/) release.
-
-This program was built in Python 3.9.0, but should work in Python 3.9.0+
-
-### Downloading the GitHub repository
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the repository.
-
-```bash
-pip install https://github.com/gavintranquilino/YouTube-view-bot.git
+## Project Structure
+```pycache/ 
+.gitignore 
+config.json 
+Dockerfile 
+LICENSE 
+README.md 
+requirements.txt 
+src/ 
+    task/ 
+        watcher.py 
+util/ 
+    base.py 
+    webdriverManager.py 
+    
+test.py 
+yt-viewer.py
 ```
 
-Alternatively, download this project as a **.zip** file, and extract into your device.
 
-### Downloading the dependencies
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the dependencies listed in **requirements.txt**.
+## Configuration
 
-```bash
-pip install -r requirements.txt
-```
-
-# Configuration
-
-### config.json
-1. Enter the required settings into the *config.json* file
+The configuration for the project is stored in `config.json`. Below is an example configuration:
 
 ```json
 {
-    "website": "YOUR VIDEO", 
-    "tab_amount": 3,
-    "watch_time": 35,
-    "view_cycles": 5,
-    "browser": "firefox"
+    "_comment": "The time mentioned in the config file is in seconds",
+    "url": "https://www.youtube.com/watch?v=RMrVbjhOmeU", 
+    "tab_count": 2,
+    "watch_time": 5,
+    "view_cycles": 3
 }
+
+```
+## Usage
+Install Dependencies: Ensure you have all the required dependencies installed. You can install them using:
+```
+pip install -r requirements.txt
 ```
 
-# Usage
+Update Configuration: Update the config.json file with the appropriate values.
 
-### How do I run this program?
-If you have completed the setup and configuration listed above, open a terminal in this directory and run using this command.
-
-```bash
-python main.py
+Run the Script: Execute the main script to start the process:
+```
+python yt-viewer.py
 ```
 
-# Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-See [CONTRIBUTING.md](https://github.com/gavintranquilino/YouTube-view-bot/blob/master/CONTRIBUTING.md) file.
+## Files
+- yt-viewer.py: Main script to run the YouTube watcher.
+- config.json: Configuration file for the project.
+- src/util/webdriverManager.py: Manages the WebDriver instance.
+- src/task/watcher.py: Contains the logic for watching YouTube videos.
 
 ## License
-See [LICENSE](https://github.com/gavintranquilino/YouTube-view-bot/blob/master/LICENSE) file.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+
+This [README.md](README.md) file now provides a clear overview of the project, its structure, configuration, and usage instructions.
