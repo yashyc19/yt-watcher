@@ -9,7 +9,7 @@
 
 # # //*[@id="movie_player"]//button[@aria-label="Play"]
 
-
+from icecream import ic
 from json import load
 from time import sleep
 from src.util.webdriverManager import WebDriverManager
@@ -65,9 +65,10 @@ def main():
     print('Initilization')
     config = get_config()
 
-    drivermanager = WebDriverManager()
+    drivermanager = WebDriverManager(mode=config['mode'])
     driver = drivermanager.driver
     watcher = Watcher(driver)
+    ic(driver)
 
     print('Opening new tabs')
     init_tabs(driver, config['tab_count'])

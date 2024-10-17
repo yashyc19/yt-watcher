@@ -1,5 +1,6 @@
 {
-    "_comment": "The time mentioned in the config file is in seconds",
+    "_comment": "time mentioned in seconds | mode: headless or gui | tab_count: number of tabs to open | watch_time: time to watch the video | view_cycles: number of times to watch the video",
+    "mode": "headless",
     "url": "https://www.youtube.com/watch?v=RMrVbjhOmeU", 
     "tab_count": 2,
     "watch_time": 5,

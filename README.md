@@ -28,14 +28,20 @@ The configuration for the project is stored in `config.json`. Below is an exampl
 
 ```json
 {
-    "_comment": "The time mentioned in the config file is in seconds",
+    "_comment": "time mentioned in seconds | mode: headless or gui | tab_count: number of tabs to open | watch_time: time to watch the video | view_cycles: number of times to watch the video",
+    "mode": "headless",
     "url": "https://www.youtube.com/watch?v=RMrVbjhOmeU", 
     "tab_count": 2,
     "watch_time": 5,
     "view_cycles": 3
 }
-
 ```
+- **mode**: setup driver as headless (cli-based | for servers) or gui mode
+- **url**: youtube video url
+- **tab_count**: number of simultaneous tabs to be used
+- **watch_time**: time in seconds to be watched the video for
+- **view_cycles**: how many number of time is activity to be done
+
 ## Usage
 Install Dependencies: Ensure you have all the required dependencies installed. You can install them using:
 ```

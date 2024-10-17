@@ -7,6 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.service import Service
 from chromedriver_autoinstaller import install
 
+
 # from config import DevData
 # from src.utils.customLogger import LogGen
 
@@ -16,16 +17,18 @@ class WebDriverManager:
     driver = None
     # logger = LogGen.loggen()
 
-    def __init__(self):
+    def __init__(self, mode='headless'):
         # initiate driver
+        if mode not in ['headless', 'gui']:
+            raise ValueError('Invalid mode. Choose between headless and gui')
+        self.mode = mode
         self.init_driver()
 
-    @classmethod
-    def init_driver(cls):
+    def init_driver(self):
         # initialize the driver here
         # logger.info(f'======Loading webdrivers for chrome======')
         options = Options()
-        # options.add_argument('--headless')  # headless mode
+        options.add_argument('--headless') if self.mode == 'headless' else None
         options.add_argument('--no-sandbox')
         options.add_argument('--start-maximized')
         options.add_argument('--disable-dev-shm-usage')
